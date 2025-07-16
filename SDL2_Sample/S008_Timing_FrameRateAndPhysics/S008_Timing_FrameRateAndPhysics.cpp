@@ -68,16 +68,19 @@ void loop()
                 running = false;
                 break;
             case SDL_MOUSEBUTTONDOWN:
-                square s;
-                s.x = e.button.x;
-                s.y = e.button.y;
-                s.w = rand() % 50 + 25;
-                s.h = rand() % 50 + 25;
-                s.yvelocity = -500;
-                s.xvelocity = rand() % 500 - 250;
-                s.lastUpdate = SDL_GetTicks();
-                s.born = SDL_GetTicks();
-                squares.push_back(s);
+                for (int i = 0; i < 3; i++) {
+                    square s;
+                    s.x = e.button.x;
+                    s.y = e.button.y;
+                    s.w = rand() % 50 + 25;
+                    s.h = rand() % 50 + 25;
+                    s.yvelocity = -500;
+                    s.xvelocity = rand() % 500 - 250;
+                    s.lastUpdate = SDL_GetTicks();
+                    s.born = SDL_GetTicks();
+                    squares.push_back(s);
+                }
+
                 break;
             }
         }
@@ -119,15 +122,20 @@ void loop()
             // demonstrating that the physics is independent of the frame rate.
             SDL_Delay(rand() % 25);
         } else if (delay_method == 1) { // 等待delta ms
-            static Uint32 last_tick = 0;
+            static Uint64 last_tick = 0;
 
-            float delta_ms = (float)SDL_GetTicks() - (float)last_tick;
-            delta_ms = 1000.0f / 60.0f - delta_ms;
-            if (delta_ms > 0) {
-                SDL_Delay((Uint32)(delta_ms + 0.5f));
-                SDL_Log("%.1f", delta_ms);
+            double delta_ms = (double)SDL_GetPerformanceCounter() - (double)last_tick;
+            delta_ms *= 1000.0;
+            delta_ms /= SDL_GetPerformanceFrequency();
+
+            int delay_ms = floor(16.666f - delta_ms);
+            if (delay_ms > 0) {
+                SDL_Delay(delay_ms);
+                SDL_Log("%.1f    %d", delta_ms, delay_ms);
+            } else {
+                SDL_Log("No time!!!!!!!!!!!!");
             }
-            last_tick = SDL_GetTicks();
+            last_tick = SDL_GetPerformanceCounter();
         } else if (delay_method == 2) { // 等待固定ms
             SDL_Delay(17);
         } else { // 不等待，适用于开启垂直同步

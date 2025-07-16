@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S001_SetupAndWindowing", "S
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S002_Bitmaps", "S002_Bitmaps\S002_Bitmaps.vcxproj", "{54384171-1E62-4160-919C-68764CE97757}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S003_Events", "S003_Events\S003_Events.vcxproj", "{2C781E88-1395-473A-A4B9-4DB6589093B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,10 @@ Global
 		{54384171-1E62-4160-919C-68764CE97757}.Debug|x64.Build.0 = Debug|x64
 		{54384171-1E62-4160-919C-68764CE97757}.Release|x64.ActiveCfg = Release|x64
 		{54384171-1E62-4160-919C-68764CE97757}.Release|x64.Build.0 = Release|x64
+		{2C781E88-1395-473A-A4B9-4DB6589093B4}.Debug|x64.ActiveCfg = Debug|x64
+		{2C781E88-1395-473A-A4B9-4DB6589093B4}.Debug|x64.Build.0 = Debug|x64
+		{2C781E88-1395-473A-A4B9-4DB6589093B4}.Release|x64.ActiveCfg = Release|x64
+		{2C781E88-1395-473A-A4B9-4DB6589093B4}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

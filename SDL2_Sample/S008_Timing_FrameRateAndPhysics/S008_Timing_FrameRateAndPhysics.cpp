@@ -42,7 +42,7 @@ int main(int argc, char** args)
 
 void loop()
 {
-    srand(time(NULL));
+    srand(static_cast<unsigned int>(time(NULL)));
 
     // Physics squares
     vector<square> squares;
@@ -70,12 +70,12 @@ void loop()
             case SDL_MOUSEBUTTONDOWN:
                 for (int i = 0; i < 3; i++) {
                     square s;
-                    s.x = e.button.x;
-                    s.y = e.button.y;
-                    s.w = rand() % 50 + 25;
-                    s.h = rand() % 50 + 25;
-                    s.yvelocity = -500;
-                    s.xvelocity = rand() % 500 - 250;
+                    s.x = static_cast<float>(e.button.x);
+                    s.y = static_cast<float>(e.button.y);
+                    s.w = static_cast<float>(rand() % 50 + 25);
+                    s.h = static_cast<float>(rand() % 50 + 25);
+                    s.yvelocity = -500.0f;
+                    s.xvelocity = static_cast<float>(rand() % 500 - 250);
                     s.lastUpdate = SDL_GetTicks();
                     s.born = SDL_GetTicks();
                     squares.push_back(s);
@@ -111,7 +111,12 @@ void loop()
 
         // Render loop
         for (const square& s : squares) {
-            SDL_Rect dest = { round(s.x), round(s.y), round(s.w), round(s.h) };
+            SDL_Rect dest = {
+                static_cast<int>(round(s.x)),
+                static_cast<int>(round(s.y)),
+                static_cast<int>(round(s.w)),
+                static_cast<int>(round(s.h))
+            };
             SDL_RenderCopy(renderer, box, NULL, &dest);
         }
 
@@ -128,7 +133,7 @@ void loop()
             delta_ms *= 1000.0;
             delta_ms /= SDL_GetPerformanceFrequency();
 
-            int delay_ms = floor(16.666f - delta_ms);
+            int delay_ms = static_cast<int>(floor(16.666f - delta_ms));
             if (delay_ms > 0) {
                 SDL_Delay(delay_ms);
                 SDL_Log("%.1f    %d", delta_ms, delay_ms);

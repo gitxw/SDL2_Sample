@@ -59,8 +59,8 @@ bool loop()
         float hpercent = my / 480.0f;
 
         // Color
-        unsigned char r = round(wpercent * 255);
-        unsigned char g = round(hpercent * 255);
+        unsigned char r = static_cast<unsigned char>(round(wpercent * 255));
+        unsigned char g = static_cast<unsigned char>(round(hpercent * 255));
 
         // Color mod (b will always be zero)
         SDL_SetTextureColorMod(texture, r, g, 0);

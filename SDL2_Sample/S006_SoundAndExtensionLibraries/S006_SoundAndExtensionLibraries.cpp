@@ -43,7 +43,6 @@ bool loop()
     static const unsigned char* keys = SDL_GetKeyboardState(NULL);
 
     SDL_Event e;
-    SDL_Rect dest;
 
     // Clear the window to white
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);

@@ -56,7 +56,7 @@ void loop()
         Uint32 current = SDL_GetTicks();
         float dT = (current - ss.lastUpdate) / 1000.0f;
 
-        int framesToUpdate = floor(dT / (1.0f / sprite_fps));
+        int framesToUpdate = static_cast<int>(floor(dT / (1.0f / sprite_fps)));
         if (framesToUpdate > 0) {
             ss.lastFrame += framesToUpdate;
             ss.lastFrame %= ss.sprites.size();

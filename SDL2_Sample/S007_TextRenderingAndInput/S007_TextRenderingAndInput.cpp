@@ -78,7 +78,7 @@ bool loop()
         SDL_Surface* text_surf = TTF_RenderUTF8_Blended(font, input.c_str(), foreground); // 此函数支持中文
         text = SDL_CreateTextureFromSurface(renderer, text_surf);
 
-        dest.x = 320 - (text_surf->w / 2.0f);
+        dest.x = static_cast<int>(320 - (text_surf->w / 2.0f));
         dest.y = 240;
         dest.w = text_surf->w;
         dest.h = text_surf->h;

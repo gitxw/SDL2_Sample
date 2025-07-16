@@ -1,5 +1,6 @@
 ﻿// 为了支持中文，本代码要使用utf-8编码
 
+#include <Windows.h>
 #include <iostream>
 #include <string>
 
@@ -12,6 +13,8 @@ using namespace std;
 bool init();
 void kill();
 bool loop();
+std::wstring UTF8_To_UTF16(const std::string& source);
+std::string UTF16_To_UTF8(const std::wstring& source);
 
 // Pointers to our window, renderer, texture, and font
 SDL_Window* window;
@@ -57,7 +60,10 @@ bool loop()
             break;
         case SDL_KEYDOWN:
             if (e.key.keysym.sym == SDLK_BACKSPACE && input.size()) {
-                input.pop_back();
+                // 删除中文字符时，可以整个字删除
+                wstring input_u16 = UTF8_To_UTF16(input);
+                input_u16.pop_back();
+                input = UTF16_To_UTF8(input_u16);
             }
             break;
         }
@@ -163,4 +169,30 @@ void kill()
     TTF_Quit();
     IMG_Quit();
     SDL_Quit();
+}
+
+std::wstring UTF8_To_UTF16(const std::string& source)
+{
+    unsigned long len = ::MultiByteToWideChar(CP_UTF8, NULL, source.c_str(), -1, NULL, NULL);
+    if (len == 0)
+        return std::wstring();
+    wchar_t* buffer = new wchar_t[len];
+    ::MultiByteToWideChar(CP_UTF8, NULL, source.c_str(), -1, buffer, len);
+
+    std::wstring dest(buffer);
+    delete[] buffer;
+    return dest;
+}
+
+std::string UTF16_To_UTF8(const std::wstring& source)
+{
+    unsigned long len = ::WideCharToMultiByte(CP_UTF8, NULL, source.c_str(), -1, NULL, NULL, NULL, NULL);
+    if (len == 0)
+        return std::string();
+    char* buffer = new char[len];
+    ::WideCharToMultiByte(CP_UTF8, NULL, source.c_str(), -1, buffer, len, NULL, NULL);
+
+    std::string dest(buffer);
+    delete[] buffer;
+    return dest;
 }

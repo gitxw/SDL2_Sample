@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S005_Textures", "S005_Textu
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S006_SoundAndExtensionLibraries", "S006_SoundAndExtensionLibraries\S006_SoundAndExtensionLibraries.vcxproj", "{F1AB79F8-AEFA-466F-937C-4F0B5949E06E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S007_TextRenderingAndInput", "S007_TextRenderingAndInput\S007_TextRenderingAndInput.vcxproj", "{E70A1358-B752-47C3-B4B7-887DEBB72279}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -45,6 +47,10 @@ Global
 		{F1AB79F8-AEFA-466F-937C-4F0B5949E06E}.Debug|x64.Build.0 = Debug|x64
 		{F1AB79F8-AEFA-466F-937C-4F0B5949E06E}.Release|x64.ActiveCfg = Release|x64
 		{F1AB79F8-AEFA-466F-937C-4F0B5949E06E}.Release|x64.Build.0 = Release|x64
+		{E70A1358-B752-47C3-B4B7-887DEBB72279}.Debug|x64.ActiveCfg = Debug|x64
+		{E70A1358-B752-47C3-B4B7-887DEBB72279}.Debug|x64.Build.0 = Debug|x64
+		{E70A1358-B752-47C3-B4B7-887DEBB72279}.Release|x64.ActiveCfg = Release|x64
+		{E70A1358-B752-47C3-B4B7-887DEBB72279}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

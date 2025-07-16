@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S003_Events", "S003_Events\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S004_GeometryRendering", "S004_GeometryRendering\S004_GeometryRendering.vcxproj", "{BEB98810-9A7E-4599-805A-662BBB95698B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S005_Textures", "S005_Textures\S005_Textures.vcxproj", "{7E6E9412-7CC7-4158-A494-5349580C0EEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -33,6 +35,10 @@ Global
 		{BEB98810-9A7E-4599-805A-662BBB95698B}.Debug|x64.Build.0 = Debug|x64
 		{BEB98810-9A7E-4599-805A-662BBB95698B}.Release|x64.ActiveCfg = Release|x64
 		{BEB98810-9A7E-4599-805A-662BBB95698B}.Release|x64.Build.0 = Release|x64
+		{7E6E9412-7CC7-4158-A494-5349580C0EEB}.Debug|x64.ActiveCfg = Debug|x64
+		{7E6E9412-7CC7-4158-A494-5349580C0EEB}.Debug|x64.Build.0 = Debug|x64
+		{7E6E9412-7CC7-4158-A494-5349580C0EEB}.Release|x64.ActiveCfg = Release|x64
+		{7E6E9412-7CC7-4158-A494-5349580C0EEB}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

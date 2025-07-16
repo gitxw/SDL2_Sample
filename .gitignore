@@ -39,3 +39,6 @@
 
 # debug information files
 *.dwo
+SDL2_Sample/.vs/
+SDL2_Sample/**/Debug
+SDL2_Sample/**/Release

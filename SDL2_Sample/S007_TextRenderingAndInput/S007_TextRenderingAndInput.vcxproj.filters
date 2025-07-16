@@ -25,8 +25,8 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="font.ttf">
+    <None Include="msyh.ttc">
       <Filter>资源文件</Filter>
-    </Font>
+    </None>
   </ItemGroup>
 </Project>

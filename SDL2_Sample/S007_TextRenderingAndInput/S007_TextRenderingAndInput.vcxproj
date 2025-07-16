@@ -81,10 +81,10 @@
     <ClCompile Include="S007_TextRenderingAndInput.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Font Include="font.ttf" />
+    <Image Include="test.png" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="test.png" />
+    <None Include="msyh.ttc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

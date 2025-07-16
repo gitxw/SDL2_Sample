@@ -1,4 +1,6 @@
-﻿#include <iostream>
+﻿// 为了支持中文，本代码要使用utf-8编码
+
+#include <iostream>
 #include <string>
 
 #include <SDL.h>
@@ -67,7 +69,7 @@ bool loop()
     SDL_Color foreground = { 0, 0, 0 };
 
     if (input.size()) {
-        SDL_Surface* text_surf = TTF_RenderText_Solid(font, input.c_str(), foreground);
+        SDL_Surface* text_surf = TTF_RenderUTF8_Blended(font, input.c_str(), foreground); // 此函数支持中文
         text = SDL_CreateTextureFromSurface(renderer, text_surf);
 
         dest.x = 320 - (text_surf->w / 2.0f);
@@ -133,7 +135,7 @@ bool init()
     }
 
     // Load font
-    font = TTF_OpenFont("font.ttf", 72);
+    font = TTF_OpenFont("msyh.ttc", 72); // 微软雅黑字体，支持中文
     if (!font) {
         cout << "Error loading font: " << TTF_GetError() << endl;
         return false;

@@ -89,6 +89,9 @@
   <ItemGroup>
     <Image Include="test.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="STCAIYUN.TTF" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -32,4 +32,9 @@
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="STCAIYUN.TTF">
+      <Filter>资源文件</Filter>
+    </Font>
+  </ItemGroup>
 </Project>

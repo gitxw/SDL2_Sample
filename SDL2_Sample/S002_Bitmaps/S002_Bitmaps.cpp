@@ -15,7 +15,6 @@ SDL_Surface* image2;
 
 int main(int argc, char** args)
 {
-
     if (!init())
         return 1;
 
@@ -31,6 +30,7 @@ int main(int argc, char** args)
     dest.y = 120;
     dest.w = 320;
     dest.h = 240;
+    // SDL_Surface *src, const SDL_Rect *srcrect, SDL_Surface *dst, SDL_Rect *dstrect
     SDL_BlitScaled(image2, NULL, winSurface, &dest);
 
     // Update window
@@ -41,6 +41,10 @@ int main(int argc, char** args)
     return 0;
 }
 
+/*
+读取图像到Surface
+使用SDL_ConvertSurface将Surface转化为适应窗口Surface的格式，提高后面绘制到窗口Surface的效率
+*/
 bool load()
 {
     // Temporary surfaces to load images into
@@ -84,7 +88,9 @@ bool init()
         return false;
     }
 
-    window = SDL_CreateWindow("Example", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 480, SDL_WINDOW_SHOWN);
+    window = SDL_CreateWindow("Example",
+        SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+        640, 480, SDL_WINDOW_SHOWN);
     if (!window) {
         cout << "Error creating window: " << SDL_GetError() << endl;
         system("pause");

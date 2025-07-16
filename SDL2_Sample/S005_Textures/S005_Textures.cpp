@@ -111,7 +111,7 @@ bool init()
     }
 
     // Load bitmap into surface
-    SDL_Surface* buffer = SDL_LoadBMP("test2.bmp");
+    SDL_Surface* buffer = SDL_LoadBMP("test.bmp");
     if (!buffer) {
         cout << "Error loading image test.bmp: " << SDL_GetError() << endl;
         return false;

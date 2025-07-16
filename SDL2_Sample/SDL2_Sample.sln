@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S007_TextRenderingAndInput"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S008_Timing_FrameRateAndPhysics", "S008_Timing_FrameRateAndPhysics\S008_Timing_FrameRateAndPhysics.vcxproj", "{36ADF071-00EC-482F-A82A-10E5FE548D5B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S009_Animation", "S009_Animation\S009_Animation.vcxproj", "{4D1E1A90-72FA-4FA5-A8AD-A624868F60DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -57,6 +59,10 @@ Global
 		{36ADF071-00EC-482F-A82A-10E5FE548D5B}.Debug|x64.Build.0 = Debug|x64
 		{36ADF071-00EC-482F-A82A-10E5FE548D5B}.Release|x64.ActiveCfg = Release|x64
 		{36ADF071-00EC-482F-A82A-10E5FE548D5B}.Release|x64.Build.0 = Release|x64
+		{4D1E1A90-72FA-4FA5-A8AD-A624868F60DA}.Debug|x64.ActiveCfg = Debug|x64
+		{4D1E1A90-72FA-4FA5-A8AD-A624868F60DA}.Debug|x64.Build.0 = Debug|x64
+		{4D1E1A90-72FA-4FA5-A8AD-A624868F60DA}.Release|x64.ActiveCfg = Release|x64
+		{4D1E1A90-72FA-4FA5-A8AD-A624868F60DA}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

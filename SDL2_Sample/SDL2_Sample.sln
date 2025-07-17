@@ -28,6 +28,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "T004_GeometryRendering", "T
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SGELib", "SGELib\SGELib.vcxproj", "{919AD2DF-B981-49C0-AC3C-18A26867B774}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "T005_Textures", "T005_Textures\T005_Textures.vcxproj", "{91E3751D-81A8-4858-A82B-1610E2AB4098}"
+	ProjectSection(ProjectDependencies) = postProject
+		{919AD2DF-B981-49C0-AC3C-18A26867B774} = {919AD2DF-B981-49C0-AC3C-18A26867B774}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -78,6 +83,10 @@ Global
 		{919AD2DF-B981-49C0-AC3C-18A26867B774}.Debug|x64.Build.0 = Debug|x64
 		{919AD2DF-B981-49C0-AC3C-18A26867B774}.Release|x64.ActiveCfg = Release|x64
 		{919AD2DF-B981-49C0-AC3C-18A26867B774}.Release|x64.Build.0 = Release|x64
+		{91E3751D-81A8-4858-A82B-1610E2AB4098}.Debug|x64.ActiveCfg = Debug|x64
+		{91E3751D-81A8-4858-A82B-1610E2AB4098}.Debug|x64.Build.0 = Debug|x64
+		{91E3751D-81A8-4858-A82B-1610E2AB4098}.Release|x64.ActiveCfg = Release|x64
+		{91E3751D-81A8-4858-A82B-1610E2AB4098}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

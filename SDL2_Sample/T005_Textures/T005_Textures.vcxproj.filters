@@ -15,34 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\SGE.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SGE_App.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SGE_Runner.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SGE_Encoder.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="include\SGE_Functions.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
+    <ClCompile Include="T005_Main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SGE_App.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="SGE_Runner.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="SGE_Encoder.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="SGE_Functions.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
+    <Image Include="test.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="T005_FrameFunctions.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="T005_UserData.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -214,6 +214,7 @@ void kill()
     window = NULL;
     renderer = NULL;
 
+    TTF_Quit();
     IMG_Quit();
     Mix_Quit();
     SDL_Quit();

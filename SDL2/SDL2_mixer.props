@@ -3,8 +3,8 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <IncludePath>$(SolutionDir)\..\SDL2\SDL2_mixer-2.8.1\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\..\SDL2\SDL2_mixer-2.8.1\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\SDL2\SDL2_mixer-2.8.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\SDL2\SDL2_mixer-2.8.1\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>

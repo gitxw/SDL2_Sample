@@ -3,8 +3,8 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <IncludePath>$(SolutionDir)\..\SDL2\SDL2-2.32.8\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\..\SDL2\SDL2-2.32.8\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)..\SDL2\SDL2-2.32.8\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)..\SDL2\SDL2-2.32.8\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>

@@ -1,8 +1,8 @@
-﻿#include "T004_Functions.h"
+﻿#include "T004_FrameFunctions.h"
 #include "T004_UserData.h"
 
-// 事件处理函数
-void EventFunction(SGE_Runner* runner, SDL_Event& e)
+// 帧事件处理函数
+void FrameEventFunc(SGE_Runner* runner, SDL_Event& e)
 {
     SDL_assert(runner != nullptr);
     SDL_assert(runner->GetApp() != nullptr);
@@ -29,8 +29,8 @@ void EventFunction(SGE_Runner* runner, SDL_Event& e)
     }
 }
 
-// 更新处理函数
-void UpdateFunction(SGE_Runner* runner, float delta_ms)
+// 帧更新函数
+void FrameUpdateFunc(SGE_Runner* runner, float delta_ms)
 {
     SDL_assert(runner != nullptr);
     SDL_assert(runner->GetApp() != nullptr);
@@ -47,8 +47,8 @@ void UpdateFunction(SGE_Runner* runner, float delta_ms)
     userData->isDrawRect = keys[SDL_SCANCODE_3]; // 数字键3
 }
 
-// 渲染处理函数
-void RenderFunction(SGE_Runner* runner)
+// 帧渲染函数
+void FrameRenderFunc(SGE_Runner* runner)
 {
     SDL_assert(runner != nullptr);
     SDL_assert(runner->GetApp() != nullptr);

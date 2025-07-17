@@ -1,8 +1,7 @@
-﻿#include "T004_Functions.h"
+﻿#include "T004_FrameFunctions.h"
 #include "T004_UserData.h"
 
-#include "SGE_App.h"
-#include "SGE_Runner.h"
+#include <SGE.h>
 
 int main(int argc, char** args)
 {
@@ -16,7 +15,7 @@ int main(int argc, char** args)
 
     // 运行
     T004_UserData userData;
-    SGE_Runner runner(&app, &userData, EventFunction, UpdateFunction, RenderFunction);
+    SGE_Runner runner(&app, &userData, FrameEventFunc, FrameUpdateFunc, FrameRenderFunc);
     runner.Run();
 
     return 0;

@@ -9,7 +9,13 @@
 /// </summary>
 class SGE_App {
 public:
-    // 构造函数
+    /// <summary>
+    /// 构造函数
+    /// </summary>
+    /// <param name="windowTitle">[IN] 窗口标题</param>
+    /// <param name="windowRect">[IN] 窗口位置尺寸</param>
+    /// <param name="windowFlags">[IN] 窗口样式，为 SDL_WindowFlags 的组合</param>
+    /// <param name="rendererFlags">[IN] 渲染器样式，为 SDL_RendererFlags 的组合</param>
     inline SGE_App(
         const std::string windowTitle = "SGE_App",
         const SDL_Rect& windowRect = { SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480 },
@@ -21,11 +27,12 @@ public:
         , m_rendererFlags(rendererFlags)
         , m_window(nullptr)
         , m_renderer(nullptr)
-
     {
         SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "SGE_App constructor.");
     }
-    // 析构函数
+    /// <summary>
+    /// 析构函数
+    /// </summary>
     inline ~SGE_App()
     {
         SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "SGE_App destructor.");
@@ -65,7 +72,7 @@ public:
 
 private:
     std::string m_windowTitle; // 窗口标题
-    SDL_Rect m_windowRect; // 窗口尺寸
+    SDL_Rect m_windowRect; // 窗口位置尺寸
     Uint32 m_windowFlags; // 窗口样式
     Uint32 m_rendererFlags; // 渲染器样式
 

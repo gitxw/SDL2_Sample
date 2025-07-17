@@ -48,6 +48,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "T007_TextRenderingAndInput"
 		{919AD2DF-B981-49C0-AC3C-18A26867B774} = {919AD2DF-B981-49C0-AC3C-18A26867B774}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "T008_Timing_FrameRateAndPhysics", "T008_Timing_FrameRateAndPhysics\T008_Timing_FrameRateAndPhysics.vcxproj", "{9CCDC8C4-1AC3-4D4F-8AF9-075AA532F16B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{919AD2DF-B981-49C0-AC3C-18A26867B774} = {919AD2DF-B981-49C0-AC3C-18A26867B774}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -114,6 +119,10 @@ Global
 		{C0CC50B7-2EE8-432D-A00C-FC3D4E5D5723}.Debug|x64.Build.0 = Debug|x64
 		{C0CC50B7-2EE8-432D-A00C-FC3D4E5D5723}.Release|x64.ActiveCfg = Release|x64
 		{C0CC50B7-2EE8-432D-A00C-FC3D4E5D5723}.Release|x64.Build.0 = Release|x64
+		{9CCDC8C4-1AC3-4D4F-8AF9-075AA532F16B}.Debug|x64.ActiveCfg = Debug|x64
+		{9CCDC8C4-1AC3-4D4F-8AF9-075AA532F16B}.Debug|x64.Build.0 = Debug|x64
+		{9CCDC8C4-1AC3-4D4F-8AF9-075AA532F16B}.Release|x64.ActiveCfg = Release|x64
+		{9CCDC8C4-1AC3-4D4F-8AF9-075AA532F16B}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

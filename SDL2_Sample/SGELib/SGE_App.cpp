@@ -115,18 +115,12 @@ void SGE_App::Destroy()
     SDL_LogVerbose(SDL_LOG_CATEGORY_APPLICATION, "SGE_App::Destroy() start.");
 
     // 销毁渲染器
-    if (nullptr != m_renderer) {
-        SDL_DestroyRenderer(m_renderer);
-        m_renderer = nullptr;
-    }
+    SGE_SAFE_RELEASE(SDL_DestroyRenderer, m_renderer);
     // 销毁窗口
-    if (nullptr != m_window) {
-        SDL_DestroyWindow(m_window);
-        m_window = nullptr;
-    }
-
-    Mix_CloseAudio(); // 关闭音频设备
-
+    SGE_SAFE_RELEASE(SDL_DestroyWindow, m_window);
+    // 关闭音频设备
+    Mix_CloseAudio();
+    // 退出各个模块
     TTF_Quit();
     IMG_Quit();
     Mix_Quit();

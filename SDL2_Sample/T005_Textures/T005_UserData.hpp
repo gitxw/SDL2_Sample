@@ -19,10 +19,7 @@ public:
     // 销毁
     inline void Destroy()
     {
-        if (texture != nullptr) {
-            SDL_DestroyTexture(texture);
-            texture = nullptr;
-        }
+        SGE_SAFE_RELEASE(SDL_DestroyTexture, texture);
     }
 
 public:

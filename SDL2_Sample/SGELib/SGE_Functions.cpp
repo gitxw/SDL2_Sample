@@ -4,9 +4,9 @@
 #include <SDL_image.h>
 
 // 默认的帧事件处理函数（仅实现了退出事件）
-void DefaultFrameEventFunc(SGE_App* app, void* userData, SDL_Event& e)
+void SGE_DefaultFrameEventFunc(SGE_App* app, void* userData, SDL_Event& e)
 {
-    UNREF_PARAM(userData);
+    SGE_UNREF_PARAM(userData);
 
     if (app == nullptr) {
         return;
@@ -36,8 +36,9 @@ SDL_Texture* SGE_LoadTextureFile(const std::string& imgFilePath, SDL_Renderer* r
 
     // 创建纹理
     SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, buffer);
-    SDL_FreeSurface(buffer);
-    buffer = nullptr;
+    // 释放图像
+    SGE_SAFE_RELEASE(SDL_FreeSurface, buffer);
+
     if (texture == nullptr) {
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Error creating texture: %s", SDL_GetError());
         return nullptr;

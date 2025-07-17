@@ -29,20 +29,11 @@ public:
     inline void Destroy()
     {
         // 销毁字体相关资源
-        if (text != nullptr) {
-            SDL_DestroyTexture(text);
-            text = nullptr;
-        }
-        if (font != nullptr) {
-            TTF_CloseFont(font);
-            font = nullptr;
-        }
+        SGE_SAFE_RELEASE(SDL_DestroyTexture, text);
+        SGE_SAFE_RELEASE(TTF_CloseFont, font);
 
         // 销毁背景图像相关资源
-        if (texture != nullptr) {
-            SDL_DestroyTexture(texture);
-            texture = nullptr;
-        }
+        SGE_SAFE_RELEASE(SDL_DestroyTexture, texture);
     }
 
 public:

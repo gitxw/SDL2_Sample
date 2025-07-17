@@ -49,30 +49,15 @@ public:
     inline void Destroy()
     {
         // 销毁字体相关资源
-        if (ttf_texture != nullptr) {
-            SDL_DestroyTexture(ttf_texture);
-            ttf_texture = nullptr;
-        }
-        if (font != nullptr) {
-            TTF_CloseFont(font);
-            font = nullptr;
-        }
+        SGE_SAFE_RELEASE(SDL_DestroyTexture, ttf_texture);
+        SGE_SAFE_RELEASE(TTF_CloseFont, font);
 
         // 销毁背景图像相关资源
-        if (bg_img_texture != nullptr) {
-            SDL_DestroyTexture(bg_img_texture);
-            bg_img_texture = nullptr;
-        }
+        SGE_SAFE_RELEASE(SDL_DestroyTexture, bg_img_texture);
 
         // 销毁声音相关资源
-        if (music != nullptr) {
-            Mix_FreeMusic(music);
-            music = nullptr;
-        }
-        if (sound != nullptr) {
-            Mix_FreeChunk(sound);
-            sound = nullptr;
-        }
+        SGE_SAFE_RELEASE(Mix_FreeMusic, music);
+        SGE_SAFE_RELEASE(Mix_FreeChunk, sound);
     }
 
 public:

@@ -7,7 +7,16 @@
 class SGE_App;
 
 // 未使用的函数形参，用于消除编译报警
-#define UNREF_PARAM(x) (x);
+#define SGE_UNREF_PARAM(x) (x);
+
+// 安全的使用func释放资源obj
+#define SGE_SAFE_RELEASE(func, obj) \
+    do {                            \
+        if (obj != nullptr) {       \
+            func(obj);              \
+            obj = nullptr;          \
+        }                           \
+    } while (0); // 使用do { ... } while(0)解决外部悬挂else问题
 
 /**
  * @def SGE_ERROR_RET_FALSE_IF(expr, format, ...)
@@ -33,7 +42,7 @@ class SGE_App;
 /// <param name="app">[IN] 应用程序</param>
 /// <param name="userData">[IN] 用户数据</param>
 /// <param name="e">[IN] SDL事件对象</param>
-void DefaultFrameEventFunc(SGE_App* app, void* userData, SDL_Event& e);
+void SGE_DefaultFrameEventFunc(SGE_App* app, void* userData, SDL_Event& e);
 
 /// <summary>
 /// 加载图像并创建纹理

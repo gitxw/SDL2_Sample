@@ -34,7 +34,7 @@ public:
 
     // 运行
     void Run(void* userData = nullptr,
-        std::function<void(SGE_App* app, void* userData, SDL_Event& e)> frameEventFunc = DefaultFrameEventFunc,
+        std::function<void(SGE_App* app, void* userData, SDL_Event& e)> frameEventFunc = SGE_DefaultFrameEventFunc,
         std::function<void(SGE_App* app, void* userData, float delta_ms)> frameUpdateFunc = nullptr,
         std::function<void(SGE_App* app, void* userData)> frameRenderFunc = nullptr);
 

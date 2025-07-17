@@ -8,17 +8,53 @@ bool loop(SGE_App* app);
 
 int main(int argc, char** args)
 {
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Application start.");
+
     SGE_App app("T004测试", { SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1024, 768 }, SDL_WINDOW_SHOWN);
 
     if (!app.Init()) {
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SGE_App::Init() failed.");
         return -1;
     }
+
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "SGE_App::Init() successfully.");
+
+    /*
+    OnCheck_Key_1_Pressing(app, data, is_pressing);
+    OnCheck_Key_2_Pressing(app, data, is_pressing);
+    OnCheck_Key_3_Pressing(app, data, is_pressing);
+    OnKeyDown(app, data, e);
+    OnKeyUp(app, data, e);
+    On_Key_D_Down(app, data, e);
+    On_Key_D_Up(app, data, e);
+    OnMouseButtonDown(app, data, e);
+    On_LBM_Down(app, data, e);
+    On_LBM_Up(app, data, e);
+    On_MouseMove(app, data, e);
+
+    SGE_EventHandler ev_handler(&app, &data);
+    ev_handler.RegisterCheckKeyPressingEvent(SDL_SCANCODE_1, OnCheck_Key_1_Pressing);
+    ev_handler.RegisterCheckKeyPressingEvent(SDL_SCANCODE_1, OnCheck_Key_1_Pressing);
+    ev_handler.RegisterCheckKeyPressingEvent(SDL_SCANCODE_1, OnCheck_Key_1_Pressing);
+    ev_handler.RegisterKeyboardEvent(SGE_KEY_DOWN, SDL_SCANCODE_D, On_Key_D_Down);
+    ev_handler.RegisterKeyboardEvent(SGE_KEY_UP, SDL_SCANCODE_D, On_Key_D_Up);
+    ev_handler.RegisterMouseLeftButtonDownEvent(On_LBM_Down);
+    ev_handler.RegisterMouseLeftButtonUpEvent(On_LBM_Up);
+    ev_handler.RegisterMouseMoveEvent(On_MouseMove);
+
+    update_function(app, data, delta_ms);
+    render_function(app, data);
+
+    SGE_Runner runner(&app, &ev_handler, update_function, render_function);
+    runner.Run();
+    */
 
     while (loop(&app)) {
         // wait before processing the next frame
         SDL_Delay(10);
     }
 
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Application stop.");
     return 0;
 }
 
@@ -29,7 +65,7 @@ bool loop(SGE_App* app)
 
     SDL_Event e;
     SDL_Rect r;
-    // For mouse rectangle (static to presist between function calls)
+    //  For mouse rectangle (static to presist between function calls)
     static int mx0 = -1, my0 = -1, mx1 = -1, my1 = -1;
 
     // Clear the window to white

@@ -10,6 +10,8 @@ bool SGE_App::Init()
         std::cout << "Error initializing SDL: " << SDL_GetError() << std::endl;
         return false;
     }
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "SDL_Init successfully.");
+    SDL_LogVerbose(SDL_LOG_CATEGORY_APPLICATION, "SGE_App::Init() start.");
 
     // 创建窗口
     m_window = SDL_CreateWindow(
@@ -46,12 +48,15 @@ bool SGE_App::Init()
         return false;
     }
 
+    SDL_LogVerbose(SDL_LOG_CATEGORY_APPLICATION, "SGE_App::Init() end.");
     return true;
 }
 
 // 销毁
 void SGE_App::Destroy()
 {
+    SDL_LogVerbose(SDL_LOG_CATEGORY_APPLICATION, "SGE_App::Destroy() start.");
+
     // 销毁渲染器
     if (nullptr != m_renderer) {
         SDL_DestroyRenderer(m_renderer);
@@ -64,4 +69,5 @@ void SGE_App::Destroy()
     }
     // 退出SDL
     SDL_Quit();
+    SDL_LogVerbose(SDL_LOG_CATEGORY_APPLICATION, "SGE_App::Destroy() end.");
 }

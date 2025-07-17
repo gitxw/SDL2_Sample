@@ -1,7 +1,5 @@
 ﻿#pragma once
 
-#include "SGE_Structure.h"
-
 #include <SDL.h>
 
 #include <string>
@@ -25,9 +23,15 @@ public:
         , m_renderer(nullptr)
 
     {
+        SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "SGE_App constructor.");
     }
     // 析构函数
-    inline ~SGE_App() { Destroy(); }
+    inline ~SGE_App()
+    {
+        SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "SGE_App destructor.");
+        Destroy();
+        SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "SGE_App destoryed.");
+    }
 
     // 获取窗口标题
     inline std::string GetWindowTitle() const { return m_windowTitle; }

@@ -2,6 +2,7 @@
 
 #include <SDL.h>
 
+#include <functional>
 #include <string>
 
 /// <summary>
@@ -29,12 +30,24 @@ public:
     // 销毁（析构函数中自动调用）
     void Destroy();
 
+    // 运行
+    void Run(void* userData = nullptr,
+        std::function<void(SGE_App* app, void* userData, SDL_Event& e)> frameEventFunc = nullptr,
+        std::function<void(SGE_App* app, void* userData, float delta_ms)> frameUpdateFunc = nullptr,
+        std::function<void(SGE_App* app, void* userData)> frameRenderFunc = nullptr);
+
     // 获取SDL窗口
     inline SDL_Window* GetWindow() const { return m_window; }
     // 获取SDL渲染器
     inline SDL_Renderer* GetRenderer() const { return m_renderer; }
 
+    // 获取运行状态
+    inline bool IsRunning() const { return m_isRunning; }
+    // 停止运行
+    inline void StopRunning() { m_isRunning = false; }
+
 private:
     SDL_Window* m_window; // SDL窗口
     SDL_Renderer* m_renderer; // SDL渲染器
+    bool m_isRunning; // 是否正在运行
 };

@@ -17,10 +17,12 @@ int main(int argc, char** args)
         return -2;
     }
 
-    SGE_Runner runner(&app, &userData, FrameEventFunc, FrameUpdateFunc, FrameRenderFunc);
-    runner.Run();
+    // 执行应用程序
+    app.Run(&userData, FrameEventFunc, FrameUpdateFunc, FrameRenderFunc);
 
+    // 清理用户数据
     userData.Destroy();
+    // 清理应用程序
     app.Destroy();
 
     return 0;

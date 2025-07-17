@@ -39,11 +39,17 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\SDL2\SDL2.props" />
+    <Import Project="..\..\SDL2\SDL2_image.props" />
+    <Import Project="..\..\SDL2\SDL2_mixer.props" />
+    <Import Project="..\..\SDL2\SDL2_ttf.props" />
     <Import Project="..\SGELib.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\SDL2\SDL2.props" />
+    <Import Project="..\..\SDL2\SDL2_image.props" />
+    <Import Project="..\..\SDL2\SDL2_mixer.props" />
+    <Import Project="..\..\SDL2\SDL2_ttf.props" />
     <Import Project="..\SGELib.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
@@ -76,12 +82,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="T004_FrameFunctions.cpp" />
     <ClCompile Include="T004_Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="T004_FrameFunctions.h" />
-    <ClInclude Include="T004_UserData.h" />
+    <ClInclude Include="T004_FrameFunctions.hpp" />
+    <ClInclude Include="T004_UserData.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -12,10 +12,7 @@ public:
     {
         // 加载图像纹理
         texture = SGE_LoadTextureFile("test.bmp", app->GetRenderer());
-        if (texture == nullptr) {
-            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "texture == nullptr");
-            return false;
-        }
+        SGE_ERROR_RET_FALSE_IF(texture == nullptr, "Error SGE_LoadTextureFile.");
         return true;
     }
 

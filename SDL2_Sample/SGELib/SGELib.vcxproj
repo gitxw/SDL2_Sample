@@ -15,13 +15,11 @@
     <ClInclude Include="include\SGE_App.h" />
     <ClInclude Include="include\SGE_Encoder.h" />
     <ClInclude Include="include\SGE_Functions.h" />
-    <ClInclude Include="include\SGE_Runner.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SGE_App.cpp" />
     <ClCompile Include="SGE_Encoder.cpp" />
     <ClCompile Include="SGE_Functions.cpp" />
-    <ClCompile Include="SGE_Runner.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

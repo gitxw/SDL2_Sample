@@ -18,15 +18,12 @@
     <ClCompile Include="T004_Main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="T004_FrameFunctions.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="T004_UserData.h">
+    <ClInclude Include="T004_UserData.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="T004_FrameFunctions.h">
+    <ClInclude Include="T004_FrameFunctions.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

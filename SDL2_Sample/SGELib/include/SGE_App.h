@@ -1,5 +1,7 @@
 ﻿#pragma once
 
+#include "SGE_Functions.h"
+
 #include <SDL.h>
 
 #include <functional>
@@ -32,7 +34,7 @@ public:
 
     // 运行
     void Run(void* userData = nullptr,
-        std::function<void(SGE_App* app, void* userData, SDL_Event& e)> frameEventFunc = nullptr,
+        std::function<void(SGE_App* app, void* userData, SDL_Event& e)> frameEventFunc = DefaultFrameEventFunc,
         std::function<void(SGE_App* app, void* userData, float delta_ms)> frameUpdateFunc = nullptr,
         std::function<void(SGE_App* app, void* userData)> frameRenderFunc = nullptr);
 

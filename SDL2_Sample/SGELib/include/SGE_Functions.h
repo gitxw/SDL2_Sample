@@ -4,6 +4,11 @@
 
 #include <string>
 
+class SGE_App;
+
+// 未使用的函数形参，用于消除编译报警
+#define UNREF_PARAM(x) (x);
+
 /**
  * @def SGE_ERROR_RET_FALSE_IF(expr, format, ...)
  * @brief 如果表达式为真，则记录错误并返回 false
@@ -21,6 +26,14 @@
             return false;                                                      \
         }                                                                      \
     } while (0); // 使用do { ... } while(0)解决外部悬挂else问题
+
+/// <summary>
+/// 默认的帧事件处理函数（仅实现了退出事件）
+/// </summary>
+/// <param name="app">[IN] 应用程序</param>
+/// <param name="userData">[IN] 用户数据</param>
+/// <param name="e">[IN] SDL事件对象</param>
+void DefaultFrameEventFunc(SGE_App* app, void* userData, SDL_Event& e);
 
 /// <summary>
 /// 加载图像并创建纹理

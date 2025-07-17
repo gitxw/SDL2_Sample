@@ -15,13 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="T004_GeometryRendering.cpp">
+    <ClCompile Include="T004_Main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="SGE_App.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="SGE_Encoder.cpp">
+    <ClCompile Include="SGE_Runner.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="T004_UserData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="T004_Functions.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,10 +35,13 @@
     <ClInclude Include="SGE_App.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="SGE_Structure.h">
+    <ClInclude Include="SGE_Runner.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="SGE_Encoder.h">
+    <ClInclude Include="T004_UserData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="T004_Functions.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

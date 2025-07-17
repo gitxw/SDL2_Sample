@@ -74,14 +74,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SGE_Encoder.cpp" />
     <ClCompile Include="SGE_App.cpp" />
-    <ClCompile Include="T004_GeometryRendering.cpp" />
+    <ClCompile Include="SGE_Runner.cpp" />
+    <ClCompile Include="T004_Functions.cpp" />
+    <ClCompile Include="T004_Main.cpp" />
+    <ClCompile Include="T004_UserData.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SGE_Encoder.h" />
     <ClInclude Include="SGE_App.h" />
-    <ClInclude Include="SGE_Structure.h" />
+    <ClInclude Include="SGE_Runner.h" />
+    <ClInclude Include="T004_Functions.h" />
+    <ClInclude Include="T004_UserData.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

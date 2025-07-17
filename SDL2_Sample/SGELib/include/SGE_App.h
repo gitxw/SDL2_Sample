@@ -11,9 +11,9 @@
 class SGE_App {
 public:
     // 构造函数
-    SGE_App();
+    SGE_App() = default;
     // 析构函数
-    ~SGE_App();
+    ~SGE_App() = default;
 
     /// <summary>
     /// 初始化
@@ -47,7 +47,7 @@ public:
     inline void StopRunning() { m_isRunning = false; }
 
 private:
-    SDL_Window* m_window; // SDL窗口
-    SDL_Renderer* m_renderer; // SDL渲染器
-    bool m_isRunning; // 是否正在运行
+    SDL_Window* m_window = nullptr; // SDL窗口
+    SDL_Renderer* m_renderer = nullptr; // SDL渲染器
+    bool m_isRunning = false; // 是否正在运行
 };

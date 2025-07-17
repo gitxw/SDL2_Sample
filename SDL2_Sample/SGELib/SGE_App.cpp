@@ -7,25 +7,6 @@
 
 #include <iostream>
 
-// 构造函数
-SGE_App::SGE_App()
-    : m_window(nullptr)
-    , m_renderer(nullptr)
-    , m_isRunning(false)
-{
-    SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "SGE_App constructor.");
-}
-
-// 析构函数
-SGE_App::~SGE_App()
-{
-    SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "SGE_App destructor.");
-
-    Destroy();
-
-    SDL_LogDebug(SDL_LOG_CATEGORY_APPLICATION, "SGE_App destoryed.");
-}
-
 // 初始化
 bool SGE_App::Init(
     const std::string windowTitle,

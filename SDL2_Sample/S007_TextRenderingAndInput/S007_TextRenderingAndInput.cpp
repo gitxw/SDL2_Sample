@@ -157,9 +157,21 @@ void kill()
 {
     SDL_StopTextInput();
 
-    TTF_CloseFont(font);
-    SDL_DestroyTexture(texture);
-    texture = NULL;
+    // 销毁字体相关资源
+    if (text != nullptr) {
+        SDL_DestroyTexture(text);
+        text = nullptr;
+    }
+    if (font != nullptr) {
+        TTF_CloseFont(font);
+        font = nullptr;
+    }
+
+    // 销毁背景图像相关资源
+    if (texture != nullptr) {
+        SDL_DestroyTexture(texture);
+        texture = nullptr;
+    }
 
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);

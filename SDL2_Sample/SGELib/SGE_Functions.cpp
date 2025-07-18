@@ -3,21 +3,6 @@
 
 #include <SDL_image.h>
 
-// 默认的帧事件处理函数（仅实现了退出事件）
-void SGE_DefaultFrameEventFunc(SGE_App* app, void* userData, SDL_Event& e)
-{
-    SGE_UNREF_PARAM(userData);
-
-    if (app == nullptr) {
-        return;
-    }
-    switch (e.type) {
-    case SDL_QUIT:
-        app->StopRunning();
-        break;
-    }
-}
-
 // 加载图像并创建纹理
 SDL_Texture* SGE_LoadTextureFile(const std::string& imgFilePath, SDL_Renderer* renderer)
 {

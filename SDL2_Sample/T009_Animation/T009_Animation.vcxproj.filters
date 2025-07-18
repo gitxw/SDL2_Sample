@@ -26,6 +26,9 @@
     <ClInclude Include="T009_UserData.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="T009_RunningLogic.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="sprites.png">

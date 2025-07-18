@@ -1,5 +1,6 @@
 ﻿#include "SGE_App.h"
 #include "SGE_Functions.h"
+#include "SGE_RunningLogic.h"
 
 #include <SDL_image.h>
 #include <SDL_mixer.h>
@@ -129,36 +130,48 @@ void SGE_App::Destroy()
     SDL_LogVerbose(SDL_LOG_CATEGORY_APPLICATION, "SGE_App::Destroy() end.");
 }
 
-// 运行
-void SGE_App::Run(void* userData,
-    std::function<void(SGE_App* app, void* userData, SDL_Event& e)> frameEventFunc,
-    std::function<void(SGE_App* app, void* userData, float delta_ms)> frameUpdateFunc,
-    std::function<void(SGE_App* app, void* userData)> frameRenderFunc)
+// 运行逻辑
+bool SGE_App::RunLogic(SGE_RunningLogic* runningLogic)
 {
-    float frame_interval_ms = 10.0f; // 帧间隔（ms）
+    SGE_ERROR_RET_FALSE_IF(runningLogic == nullptr, "Param Error: runningLogic == nullptr");
+
+    // 执行运行前处理
+    SGE_ERROR_RET_FALSE_IF(!runningLogic->BeforeRun(), "Error BeforeRun");
 
     // 开始帧循环，每帧依次调用：事件、更新、渲染
     m_isRunning = true;
     while (m_isRunning) {
+        // 帧开始
+        runningLogic->FrameBegin();
+
         // 事件处理
         SDL_Event e;
         while (SDL_PollEvent(&e) != 0) {
-            if (frameEventFunc) {
-                frameEventFunc(this, userData, e);
-            }
+            runningLogic->FrameEvent(e);
         }
 
         // 更新
-        if (frameUpdateFunc) {
-            frameUpdateFunc(this, userData, frame_interval_ms);
-        }
+        runningLogic->FrameUpdate(16); // TODO
+
+        // 取得渲染器
+        SDL_Renderer* renderer = this->GetRenderer();
+
+        // Clear the window to white
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        SDL_RenderClear(renderer);
 
         // 渲染
-        if (frameRenderFunc) {
-            frameRenderFunc(this, userData);
-        }
+        runningLogic->FrameRender(renderer);
+
+        // Update window
+        SDL_RenderPresent(renderer);
+
+        // 帧结束
+        runningLogic->FrameEnd();
 
         // wait before processing the next frame
-        SDL_Delay(static_cast<Uint32>(frame_interval_ms));
+        SDL_Delay(runningLogic->FrameDelayMs());
     }
+
+    return true;
 }

@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="T009_FrameFunctions.hpp" />
+    <ClInclude Include="T009_RunningLogic.hpp" />
     <ClInclude Include="T009_UserData.hpp" />
   </ItemGroup>
   <ItemGroup>

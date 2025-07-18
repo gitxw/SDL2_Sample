@@ -88,7 +88,7 @@
     <Image Include="test.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="T005_FrameFunctions.hpp" />
+    <ClInclude Include="T005_RunningLogic.hpp" />
     <ClInclude Include="T005_UserData.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

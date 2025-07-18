@@ -3,6 +3,7 @@
 #include "SGE_App.h"
 #include "SGE_Encoder.h"
 #include "SGE_Functions.h"
+#include "SGE_RunningLogic.h"
 
 #include <SDL.h>
 #include <SDL_image.h>

@@ -7,6 +7,8 @@
 #include <functional>
 #include <string>
 
+class SGE_RunningLogic;
+
 /// <summary>
 /// 应用程序类
 /// </summary>
@@ -15,7 +17,7 @@ public:
     // 构造函数
     SGE_App() = default;
     // 析构函数
-    ~SGE_App() = default;
+    inline ~SGE_App() { Destroy(); }
 
     /// <summary>
     /// 初始化
@@ -32,11 +34,8 @@ public:
     // 销毁（析构函数中自动调用）
     void Destroy();
 
-    // 运行
-    void Run(void* userData = nullptr,
-        std::function<void(SGE_App* app, void* userData, SDL_Event& e)> frameEventFunc = SGE_DefaultFrameEventFunc,
-        std::function<void(SGE_App* app, void* userData, float delta_ms)> frameUpdateFunc = nullptr,
-        std::function<void(SGE_App* app, void* userData)> frameRenderFunc = nullptr);
+    // 运行逻辑
+    bool RunLogic(SGE_RunningLogic* runningLogic);
 
     // 获取SDL窗口
     inline SDL_Window* GetWindow() const { return m_window; }

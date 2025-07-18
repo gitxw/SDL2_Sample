@@ -27,6 +27,9 @@
     <ClInclude Include="include\SGE_Functions.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="include\SGE_RunningLogic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SGE_App.cpp">
@@ -36,6 +39,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="SGE_Functions.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SGE_RunningLogic.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

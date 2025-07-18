@@ -8,11 +8,13 @@ int main(int argc, char** args)
         return -1;
     }
 
-    // 执行应用程序
-    app.Run();
+    // 定义逻辑对象
+    SGE_RunningLogic logic(&app);
 
-    // 清理应用程序
-    app.Destroy();
+    // 运行逻辑
+    if (!app.RunLogic(&logic)) {
+        return -2;
+    }
 
     return 0;
 }

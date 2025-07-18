@@ -85,7 +85,7 @@
     <ClCompile Include="T007_Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="T007_FrameFunctions.hpp" />
+    <ClInclude Include="T007_RunningLogic.hpp" />
     <ClInclude Include="T007_UserData.hpp" />
   </ItemGroup>
   <ItemGroup>

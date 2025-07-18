@@ -85,7 +85,7 @@
     <ClCompile Include="T004_Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="T004_FrameFunctions.hpp" />
+    <ClInclude Include="T004_RunningLogic.hpp" />
     <ClInclude Include="T004_UserData.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

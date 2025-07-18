@@ -37,7 +37,7 @@ public:
     }
 
 public:
-    SDL_Texture *texture, *text;
-    TTF_Font* font;
-    std::string input;
+    SDL_Texture *texture = nullptr, *text = nullptr;
+    TTF_Font* font = nullptr;
+    std::string input = "";
 };

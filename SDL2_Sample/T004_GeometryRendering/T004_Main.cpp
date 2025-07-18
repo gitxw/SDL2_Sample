@@ -1,5 +1,4 @@
-﻿#include "T004_FrameFunctions.hpp"
-#include "T004_UserData.hpp"
+﻿#include "T004_RunningLogic.hpp"
 
 #include <SGE.h>
 
@@ -13,14 +12,13 @@ int main(int argc, char** args)
         return -1;
     }
 
-    // 定义用户数据
-    T004_UserData userData;
+    // 定义逻辑对象
+    T004_RunningLogic logic(&app);
 
-    // 运行
-    app.Run(&userData, FrameEventFunc, FrameUpdateFunc, FrameRenderFunc);
-
-    // 清理应用程序
-    app.Destroy();
+    // 运行逻辑
+    if (!app.RunLogic(&logic)) {
+        return -2;
+    }
 
     return 0;
 }

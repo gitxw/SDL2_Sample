@@ -20,10 +20,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="T008_FrameFunctions.hpp">
+    <ClInclude Include="T008_UserData.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="T008_UserData.hpp">
+    <ClInclude Include="T008_RunningLogic.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

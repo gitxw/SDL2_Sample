@@ -32,7 +32,7 @@ public:
         TTF_SetFontOutline(font, 1); // 设置1像素轮廓
         // 创建文字表面
         SDL_Color font_color = { 255, 0, 255, 255 }; // RGBA紫色
-        SDL_Surface* blendedSurface = TTF_RenderUNICODE_Blended(font, (Uint16*)L"~ ABC主菜单 ~", font_color);
+        SDL_Surface* blendedSurface = TTF_RenderUTF8_Blended(font, "~ ABC主菜单 ~", font_color);
         SGE_ERROR_RET_FALSE_IF(blendedSurface == nullptr, "Failed to create blended text surface: %s", TTF_GetError());
         // 创建字体纹理
         ttf_texture = SDL_CreateTextureFromSurface(app->GetRenderer(), blendedSurface);

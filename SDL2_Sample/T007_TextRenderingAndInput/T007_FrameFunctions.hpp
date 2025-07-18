@@ -59,21 +59,16 @@ void FrameRenderFunc(SGE_App* app, void* userData)
     // Render texture
     SDL_RenderCopy(renderer, ud->texture, nullptr, nullptr);
 
-    SDL_Color foreground = { 0, 0, 0 };
-
     if (ud->input.size()) {
-        SDL_Surface* text_surf = TTF_RenderUTF8_Blended(ud->font, ud->input.c_str(), foreground); // 此函数支持中文
-        ud->text = SDL_CreateTextureFromSurface(renderer, text_surf);
-
-        SDL_Rect dest;
-        dest.x = static_cast<int>(320 - (text_surf->w / 2.0f));
-        dest.y = 240;
-        dest.w = text_surf->w;
-        dest.h = text_surf->h;
+        SDL_Color foreground = { 0, 0, 0 }; // 文字颜色
+        int w, h; // 文字尺寸
+        // 创建字体纹理
+        ud->text = SGE_CreateFontTexture(ud->font, ud->input, foreground, renderer, w, h);
+        // 绘制纹理
+        SDL_Rect dest = { static_cast<int>(320 - (w / 2.0f)), 240, w, h };
         SDL_RenderCopy(renderer, ud->text, nullptr, &dest);
-
-        SDL_DestroyTexture(ud->text);
-        SDL_FreeSurface(text_surf);
+        // 释放纹理
+        SGE_SAFE_RELEASE(SDL_DestroyTexture, ud->text);
     }
 
     // Update window

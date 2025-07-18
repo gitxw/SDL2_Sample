@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include <SDL.h>
+#include <SDL_ttf.h>
 
 #include <string>
 
@@ -51,3 +52,15 @@ void SGE_DefaultFrameEventFunc(SGE_App* app, void* userData, SDL_Event& e);
 /// <param name="renderer">[IN] 渲染器</param>
 /// <returns>纹理对象</returns>
 SDL_Texture* SGE_LoadTextureFile(const std::string& imgFilePath, SDL_Renderer* renderer);
+
+/// <summary>
+/// 创建文本纹理
+/// </summary>
+/// <param name="font">[IN] 字体</param>
+/// <param name="text">[IN] 文本</param>
+/// <param name="font_color">[IN] 字体颜色</param>
+/// <param name="renderer">[IN] 渲染器</param>
+/// <param name="w">[OUT] 宽度(px)</param>
+/// <param name="h">[OUT] 高度(px)</param>
+/// <returns>纹理对象</returns>
+SDL_Texture* SGE_CreateFontTexture(TTF_Font* font, const std::string& text, const SDL_Color& font_color, SDL_Renderer* renderer, int& w, int& h);
